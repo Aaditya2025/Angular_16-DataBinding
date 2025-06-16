@@ -1,0 +1,37 @@
+<div
+  class="panel panel-default">
+  <div class="panel-heading">{{ element.name }}</div>
+  <div class="panel-body">
+    <ng-content></ng-content>
+  </div>
+</div>
+<!-- 
+🔷 What is ng-content?
+<ng-content> is a special Angular directive that allows content projection, meaning:
+It projects or inserts external (parent) content into a child component's template.
+
+🔷 Real-World Analogy
+Think of a photo frame (child component), and the photo you insert (parent content).
+The frame is fixed, but you can change the photo anytime. -->
+
+
+<!-- 
+🔷 Multiple <ng-content> with Selectors:
+You can project different parts of content using CSS selectors.
+
+🧩 Child Template
+html:
+<div class="wrapper">
+  <header><ng-content select="[header]"></ng-content></header>
+  <main><ng-content></ng-content></main>
+  <footer><ng-content select="[footer]"></ng-content></footer>
+</div>
+
+🏠 Parent Template
+html:
+<app-wrapper>
+  <div header>This is Header</div>
+  <p>This is body content</p>
+  <div footer>This is Footer</div>
+</app-wrapper> 
+-->

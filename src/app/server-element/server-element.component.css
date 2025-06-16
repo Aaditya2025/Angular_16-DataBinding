@@ -1,0 +1,34 @@
+p {
+  color: blue;
+}
+
+/* 🔬 Under the Hood: What happens?
+Angular compiles component templates and styles in a way that:
+
+In Emulated, it rewrites CSS selectors to match custom attributes.
+
+In ShadowDom, it attaches the component template to a real shadow root.
+
+In None, it simply adds the styles to the global <style> tag. */
+
+
+/* 3. 🧩 ShadowDom
+encapsulation: ViewEncapsulation.ShadowDom
+
+1.Uses the native browser Shadow DOM.
+2.Styles are truly encapsulated by the browser.
+3.Modern and powerful, but older browsers may not support all Shadow DOM features. 
+
+1.he entire template is encapsulated inside the Shadow DOM.
+2.Styles inside it do not leak out, and external styles do not leak in.
+3.It’s the most isolated and clean, but requires modern browser support.
+*/
+
+/* ✅ Default Behavior of Angular for View Encapsulation
+When you create a component in Angular, the default View Encapsulation mode is:
+ViewEncapsulation.Emulated
+
+🔍 What does this mean?
+1.Angular automatically scopes the styles you define in a component’s .css or .scss file.
+2.It simulates CSS isolation by adding custom attributes to elements and style rules.
+3.This avoids global CSS pollution without requiring Shadow DOM. */
